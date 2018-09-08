@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="424.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AddReminderPage">
+<AnchorPane prefHeight="424.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.addReminderPgController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="51.0" layoutY="40.0" prefHeight="338.0" prefWidth="526.0">
          <children>
@@ -16,20 +16,20 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Label>
-            <ListView prefHeight="194.0" prefWidth="507.0" />
+            <ListView fx:id="listOfStrings" prefHeight="194.0" prefWidth="507.0" />
             <HBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="526.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add All">
+                  <Button fx:id="addAllButton" mnemonicParsing="false" text="Add All">
                      <font>
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Remove Selected">
+                  <Button fx:id="removeSelectedButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Remove Selected">
                      <font>
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="65.0" layoutY="10.0" mnemonicParsing="false" text="Reset List">
+                  <Button fx:id="resetListButton" layoutX="65.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickResetList" text="Reset List">
                      <font>
                         <Font size="12.0" />
                      </font>
@@ -40,22 +40,22 @@
             <HBox alignment="TOP_CENTER" prefHeight="23.0" prefWidth="512.0" spacing="5.0">
                <children>
                   <Region prefHeight="23.0" prefWidth="58.0" />
-                  <TextField prefHeight="23.0" prefWidth="115.0" promptText="Start Date(MM/DD/YY)">
+                  <TextField fx:id="startDateField" prefHeight="23.0" prefWidth="115.0" promptText="Start Date(MM/DD/YY)">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="150.0" promptText="*Completion Date(MM/DD/YY)">
+                  <TextField fx:id="completionDateField" layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="150.0" promptText="*Completion Date(MM/DD/YY)">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="115.0" layoutY="10.0" prefHeight="23.0" prefWidth="105.0" promptText="Start Time(11:59 PM)">
+                  <TextField fx:id="startTimeField" layoutX="115.0" layoutY="10.0" prefHeight="23.0" prefWidth="105.0" promptText="Start Time(11:59 PM)">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="173.0" layoutY="10.0" prefHeight="23.0" prefWidth="98.0" promptText="End Time(11:59 PM)">
+                  <TextField fx:id="endTimeField" layoutX="173.0" layoutY="10.0" prefHeight="23.0" prefWidth="98.0" promptText="End Time(11:59 PM)">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -69,7 +69,7 @@
                         <Font name="System Italic" size="10.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="37.0" prefWidth="468.0" wrapText="true">
+                  <TextArea fx:id="descriptionField" prefHeight="37.0" prefWidth="468.0" wrapText="true">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -79,7 +79,7 @@
             <HBox prefHeight="27.0" prefWidth="475.0">
                <children>
                   <Region prefHeight="27.0" prefWidth="59.0" />
-                  <Button mnemonicParsing="false" text="Add To List">
+                  <Button fx:id="addToListButton" mnemonicParsing="false" onAction="#clickAddToList" text="Add To List">
                      <font>
                         <Font size="12.0" />
                      </font>

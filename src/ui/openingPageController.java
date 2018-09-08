@@ -1,13 +1,19 @@
 package ui;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -57,4 +63,16 @@ public class openingPageController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    @FXML
+    private void handleClickedAddNewDaily(ActionEvent clickedOn) throws IOException {
+        Parent addReminderPg = FXMLLoader.load(getClass().getResource("addReminderPage.fxml"));
+        Scene scene = new Scene(addReminderPg);
+        Stage newStage = new Stage();
+        newStage.setScene(scene);
+        newStage.setTitle("Add New Reminders");
+        newStage.show();
+
+    }
+
 }
